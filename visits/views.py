@@ -12,7 +12,7 @@ from visits.serializers import VisitingSerializer
 @method_decorator(csrf_exempt, name='dispatch')
 class Visiting(View):
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         data = json.loads(request.body)
         phone = request.GET.get('phone', None)
         if phone is None:

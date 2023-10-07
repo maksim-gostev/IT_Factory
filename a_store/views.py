@@ -4,9 +4,10 @@ from django.views import View
 from a_store.models import A_Stores
 from a_store.serializers import A_StoreListSerializer
 
+
 class GetA_StoreList(View):
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
         a_stores = A_Stores.objects.all()
         phone = request.GET.get('phone', None)
         if phone:

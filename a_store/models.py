@@ -1,7 +1,7 @@
 from django.db import models
 
-class Workers(models.Model):
 
+class Workers(models.Model):
     name = models.CharField(max_length=255, verbose_name='Имя работника')
     phone_number = models.CharField(max_length=255, verbose_name='Телефон работника')
 
@@ -14,7 +14,6 @@ class Workers(models.Model):
 
 
 class A_Stores(models.Model):
-
     name = models.CharField(max_length=255, verbose_name='Название торговой точки')
     worker = models.ForeignKey(Workers, on_delete=models.CASCADE, related_name='a_stores', verbose_name='Работник')
 

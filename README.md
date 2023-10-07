@@ -35,11 +35,20 @@ POST: http://127.0.0.1:8000/visit/?phone=89096869722
 > - поиск по имени работника
 
 ## Запуск
-### из IDE
+
 ##### Файл .env для локального запуска:
->* SECRET_KEY=
+>* SECRET_KEY=postgres
+>* POSTGRES_DB=postgres
+>* POSTGRES_USER=postgres
+>* POSTGRES_PASSWORD=postgres
+>* DB_HOST=localhost
 ---------------
+### из IDE
 >* pip install poetry
 >* poetry install
 >* python manage.py migrate
 >* python manage.py runserver
+
+### из Dockr
+Команда для локального запуска (из корня проекта):<br>
+<code>docker-compose up -d</code>
